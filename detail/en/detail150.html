@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 외부 CSS 파일 링크 -->
+    <style>
+        /* 스타일 시트에 추가된 스타일 */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: transparent; /* 투명 배경 */
+            color: black; /* 기본 아이콘 색상 */
+            padding: 10px;
+            border: none;
+            font-size: 24px; /* 아이콘 크기 */
+            cursor: pointer;
+            outline: none;
+            transition: color 0.3s; /* 색상 변화에 부드러운 전환 효과 추가 */
+        }
+        .back-button:hover {
+            color: #388E3C; /* 호버 시 색상 */
+        }
+    </style>
+    <script>
+        // 페이지 로드 시 실행될 함수
+        window.onload = function() {
+            // id에 따라 적절한 내용 표시
+            var titleElement = document.querySelector('h1');
+            var contentElement = document.querySelector('article p');
+            titleElement.textContent = 'Update 1.5.0';
+            contentElement.innerHTML = '<h1>Adding and Modifying Features</h1><h3> Feature</h3>1. (NEW) “AI Recommended Words” tab has been added!! Now you can receive word recommendations!<br>2. AI search function has been improved.<br>3. AI sentence checking has been included in the AI Search tab.<br>';
+            // contentElement.innerHTML = '<h1>Adding and Modifying Features</h1><h3> Feature</h3>1. The descriptive format for AI sentence generation has been added.<br>2. The AI language detection feature has been improved.<br><h3> Fixed</h3>1. Fixed word editing bug.<br>';
+
+            // 뒤로가기 버튼 클릭 시 이벤트 처리
+            var backButton = document.getElementById('backButton');
+            backButton.addEventListener('click', function() {
+                history.back(); // 브라우저의 이전 페이지로 이동
+            });
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>상세 페이지</h1>
+        <button id="backButton" class="back-button">&#8592;</button> <!-- 왼쪽 화살표 아이콘 -->
+    </header>
+    <main>
+        <article>
+            <h2></h2>
+            <p></p>
+        </article>
+    </main>
+</body>
+</html>
